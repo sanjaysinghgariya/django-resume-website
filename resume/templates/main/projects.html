@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% block title %}projects{% endblock title %}
+{% block css %}{% endblock css %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Projects I Have done</h2>
+        {% for project in projects %}
+        {% for j in project %}
+          
+        
+        {% if forloop.counter|divisibleby:2 %}
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{{j}}">{{j}}</a></li>
+        </ul>
+        {%else%}
+        <h3><b>{{j}}</b></h3>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock body %}

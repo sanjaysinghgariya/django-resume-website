@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+{% block title %}Home page{% endblock title %}
+{% block css %}
+.card{
+    margin: auto auto;
+}
+.btn{
+  padding: 5px;
+  margin: 6px;
+}
+h3{
+  margin: 10px 413px;
+}
+{% endblock css %}
+{% block body %}
+{% load static %}
+<div class="container">
+    
+    <div class="row">
+      <h3>Resume Page </h3>
+        <div class="col-6">
+            <div class="card" style="width: 18rem;">
+                <img src='{% static 'main/img1.jpg' %}' class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4 class="card-title"><strong>{{name}}</strong></h4>
+                  <h5 class="card-title"><b><i>{{job_title}}</i></b></h5>
+                  
+                  <div class="col">
+                    <a href="https://github.com/sanjaysinghgariya" class="btn btn-primary">Github</a>
+                    <a href="https://www.linkedin.com/in/sanjay-gariya-67a04a236" class="btn btn-primary">Linkdin</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-6">
+            <div class="card w-75 mb-3" style="margin-left: -180px;">
+                <div class="card-body">
+                  <h5 class="card-title"><b>About Me</b></h5>
+                  <p class="card-text">{{about_me}}</p>
+                  <h5 class="card-title"><b>Qualification</b></h5>
+                  
+                  
+                    {% for k  in qualification %}
+                    {% for j in k %}
+                    <ul class="list-group">
+                      <li class="list-group-item">{{j}}</li>
+                    </ul>
+                    {% endfor %}
+                    
+                    {% endfor %}
+                    
+                  </ul>
+                
+                  <a href="#" class="btn btn-primary">Contact me</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
